@@ -2,10 +2,10 @@ const input = "Cras pretium orci sed nibh tristique elementum. Morbi ut aliquet 
 
 const lowCase = w => w.toLowerCase()
 const getWords = text => text.match(/(\w)+/g)
-const addWordInHash = (hash, word) => {
+const countWords = words => words.reduce( (hash, word) => {
     hash[word] |= 1 + hash[word]
     return hash
-}
-const countWords = words => words.reduce(, {} )
-let words = getWords(input).map(lowCase)
-console.log( countWords(words) )
+}, {} )
+
+let wordsList = getWords(input).map(lowCase)
+console.log( countWords(wordsList) )
