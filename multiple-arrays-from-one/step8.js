@@ -6,7 +6,7 @@ const powFilter = num => num * num
 const toStringFilter = num => num.toString()
 const toNegative = num => -num
 
-const transformWith = (fns, input) => (item, ky) => {
+const transformWith = (fns, input) => (undefined, ky) => {
 	return Array.from(input, fns[ky])
 }
 
